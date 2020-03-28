@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29905.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wpf_ui", "wpf_ui\wpf_ui.csproj", "{07B33211-7DDD-4217-9CD0-CFE95DDEAE86}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary", "ClassLibrary\ClassLibrary.csproj", "{40B33DAC-C7DB-49A7-B97E-E7E40C930687}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{07B33211-7DDD-4217-9CD0-CFE95DDEAE86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07B33211-7DDD-4217-9CD0-CFE95DDEAE86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07B33211-7DDD-4217-9CD0-CFE95DDEAE86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07B33211-7DDD-4217-9CD0-CFE95DDEAE86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40B33DAC-C7DB-49A7-B97E-E7E40C930687}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40B33DAC-C7DB-49A7-B97E-E7E40C930687}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40B33DAC-C7DB-49A7-B97E-E7E40C930687}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40B33DAC-C7DB-49A7-B97E-E7E40C930687}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3545FE77-277D-46BA-9C71-80477D2C044E}
+	EndGlobalSection
+EndGlobal

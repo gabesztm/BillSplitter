@@ -1,0 +1,98 @@
+﻿<Window x:Class="wpf_ui.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:wpf_ui"
+        mc:Ignorable="d"
+        Title="Bill Splitter" Height="470" Width="800" FontSize="16" Icon="calculate.png">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5"></ColumnDefinition>
+            <ColumnDefinition Width="auto"></ColumnDefinition>
+            <ColumnDefinition Width="auto"></ColumnDefinition>
+            <ColumnDefinition Width="auto"></ColumnDefinition>
+            <ColumnDefinition Width="auto"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="5"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="5"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <GroupBox x:Name="grpFamilies" Header="Participating families" Grid.Row="1" Grid.Column="1" BorderThickness="2">
+            <StackPanel Orientation="Horizontal">
+                <StackPanel>
+                    <TextBlock Margin="2">Familyname:</TextBlock>
+                    <TextBox x:Name="txtFamilyName" Margin="2" Width="125"/>
+                    <Button x:Name="btnAddFamily" Margin="2" Click="btnAddFamily_Click" Width="125">Add</Button>
+                    <Button x:Name="btnDeleteFamily" Margin="2" Width="125" Click="btnDeleteFamily_Click">Remove selected</Button>
+                    <StackPanel Orientation="Horizontal" Width="125" >
+                        <TextBlock>Currency:</TextBlock>
+                        <TextBox x:Name="txtCurrency" Width="25" Margin="10,0"></TextBox>
+                    </StackPanel>
+
+                </StackPanel>
+
+                <ListBox x:Name="boxFamilies" Width="110" Height="130" Margin="2" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Hidden">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding familyName}"/>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+                <Button x:Name="btnStart"  Height="40" Width="90"
+                Grid.Row="1" Grid.Column="2" Margin="10"  Click="btnStart_Click">
+                    CONTINUE
+                </Button>
+            </StackPanel>
+
+        </GroupBox>
+
+        <GroupBox x:Name="grpDinners" Header="Dinners" Grid.Row="2" Grid.Column="1" Margin="0,40,0,0" MinHeight="215" BorderThickness="2">
+            <StackPanel Orientation="Horizontal">
+                <StackPanel>
+                    <TextBlock Margin="2">Location:</TextBlock>
+                    <TextBox x:Name="txtDinner" Margin="2" Width="125"/>
+                    <TextBlock Margin="2">Paid:</TextBlock>
+                    <ComboBox x:Name="cmbPurchaser" Width="125">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding familyName}"/>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+                    <TextBlock Margin="2">Sum:</TextBlock>
+                    <TextBox x:Name="txtDinnerPrice" Margin="2" Width="125"/>
+                    <Button x:Name="btnAddDinner" Margin="2" Click="btnAddDinner_Click" Width="125">Add</Button>
+                    <!--<Button x:Name="btnDeleteDinner" Margin="2" Width="80" >Kijelölt törlése</Button>-->
+                </StackPanel>
+
+                <ListBox x:Name="boxDinners" Width="110" Height="185" Margin="2" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Hidden">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Location}"/>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox x:Name="grpTransactions" Header="Consumptions" Grid.Row="2" Grid.Column="3" Margin="0,40,0,0" MinWidth="400" MinHeight="215" BorderThickness="2">
+            <StackPanel Orientation="Vertical">
+                <Button x:Name="btnSaveTransactions" MaxWidth="70" Click="btnSaveTransactions_Click">Continue</Button>
+                <StackPanel x:Name="stckTransactions" Orientation="Vertical">
+
+                </StackPanel>
+
+            </StackPanel>
+        </GroupBox>
+        <Button x:Name="Finish" Grid.Column="3" Grid.Row="1" Click="Finish_Click" MaxHeight="40" MaxWidth="90" Cursor="Hand">
+            Calculate!
+        </Button>
+    </Grid>
+</Window>
